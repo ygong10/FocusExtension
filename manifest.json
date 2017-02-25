@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+	"name": "Focus",
+	"description": "Focus is an open source extension that cleans up tabs that you don't need",
+	"version": "1.0.0.1",
+
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+
+	"background": {
+		"scripts": ["tabHandler.js"],
+		"persistent": false
+	},
+
+	"permissions": [
+		"identity",
+		"tabs"
+	],
+
+  "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com https://maxcdn.bootstrapcdn.com https://ajax.googleapis.com; object-src 'self'",
+
+  "oauth2": {
+    "client_id": "1064226865545-cbs5boi95nslf3osbbshlhafqv9lgpk4.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
+
+}
