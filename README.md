@@ -1,6 +1,8 @@
 # Focus Extension
 
 This is an open source Google Chrome Extension to promote productivity by removing tabs with specified urls to make sure you focus.
+
+## Features
   * Add/Remove specified urls 
   * Setting timer for closing tabs
 
