@@ -1,33 +1,5 @@
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAL517jiGa6Xfv8YW6v8247Qc7mWLbcDp4",
-    authDomain: "focus-fc061.firebaseapp.com",
-    databaseURL: "https://focus-fc061.firebaseio.com",
-    storageBucket: "focus-fc061.appspot.com",
-    messagingSenderId: "1064226865545"
-  };
-  firebase.initializeApp(config);
-
-
-
-/* Database Schema */
-/* {"user: {
-			"email": {
-			"restricted_url": {url: 
-													total_time_spent:
-													total_days_spent:
-													average_total_time_spent:
-													today_time_spent:
-												}	
-			"statistics": { restricted_urls: [restricted_url] 
-											total_time_spent_on_all_urls:
-											average_time_spent_on_all_urls:
-											today_time_spent:
-											}
-			}
-}*/
-
-
+"use strict"
+/* From Firebase Google Chrome tutorial */
 function initApp() {
   // Listen for auth state changes.
   // [START authstatelistener]
@@ -45,6 +17,12 @@ function initApp() {
       document.getElementById('quickstart-button').textContent = 'Sign out';
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
       document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+
+			// api handles existing users
+			api.createNewUserData(uid, email);
+
+			buildUrlControllerView(uid);
+
       // [END_EXCLUDE]
     } else {
       // Let's try to get a Google auth token programmatically.
@@ -104,3 +82,35 @@ function startSignIn() {
 window.onload = function() {
   initApp();
 };
+
+var buildUrlControllerView = function(uid) {
+			var urlControllerView = document.createElement("div");
+			var inputUrlBox = document.createElement("input");
+			var addUrlButton = document.createElement("button");
+			var viewUrlsButton = document.createElement("button");
+			
+			addUrlButton.id = "add-url-button";
+			addUrlButton.className = "btn btn-primary";
+			addUrlButton.textContent = "Add URL";
+			viewUrlsButton.id = "view-res-urls-button";
+			viewUrlsButton.className = "btn btn-primary";
+			viewUrlsButton.textContent = "View All Restricted URLS";
+			urlControllerView.appendChild(inputUrlBox);
+			urlControllerView.appendChild(addUrlButton);
+			urlControllerView.appendChild(viewUrlsButton);
+
+			var mainContainer = document.getElementById("main-container");
+			mainContainer.appendChild(urlControllerView);
+
+			addUrlButton.addEventListener("click", function() {
+				logic.addUrl(inputUrlBox.value);
+				inputUrlBox.value = "";
+			});
+
+			viewUrlsButton.addEventListener("click", function(uid) {
+				var urls = api.getUserData(uid).restricted_urls;
+				var urlsContainer = document.createElement("div");
+				urlsContainer.textContent = urls;
+				urlControllerView.appendChild(urlsContainer);
+			});
+}

@@ -17,29 +17,32 @@
 
 		<!-- FireBase -->
 		<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-		<script src="credentials.js"></script>
+
 	</head>
 
 	<body>
   <h3>Firebase Authentication</h3>
+	<div id="main-container">
+		<div class="quickstart-user-details-container">
+			<button id="quickstart-button" class="btn btn-primary">Sign-in with Google</button>
+			<p>
+				Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+				<div>Firebase auth <code>currentUser</code> object value:</div>
+				<pre><code id="quickstart-account-details">null</code></pre>
+			</p>
+		</div>	
 
-  <div class="quickstart-user-details-container">
-    <button id="quickstart-button">Sign-in with Google</button>
-    <p>
-      Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-      <div>Firebase auth <code>currentUser</code> object value:</div>
-      <pre><code id="quickstart-account-details">null</code></pre>
-    </p>
-  </div>
-	
-		<!-- Timer here -->
-		<input type="text" name="url">
-		<button type="submit" class="btn btn-primary">Add URL</button>
-		<button type="button" class="btn btn-primary">View List</button>
+		<div class="url-controller-view">
 
-		<button type="button" class="btn btn-primary">Run Timer</button>
-		<button type="button" class="btn btn-primary">Stop Timer</button>
-		<button type="button" class="btn btn-primary">Reset Timer</button>
-		<div>Config</div>
+		</div>
+	</div>
+
+		<a class="btn btn-primary" href="popupConfig.html">Config</button>
+
+		<script src="firebaseConfig.js"></script>
+		<script src="init.js"></script>
+		<script src="api.js"></script>
+		<script src="logic.js"></script>
+		<script src="credentials.js"></script>
 	</body>
 </html>
