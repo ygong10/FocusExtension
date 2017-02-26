@@ -11,6 +11,8 @@ var buildUrlControllerView = function(uid) {
 	addUrlButton.className = "btn btn-primary";
 	addUrlButton.textContent = "Add URL";
 
+	inputUrlBox.placeholder = "https://www.facebook.com/";
+	
 	viewUrlsButton.id = "view-res-urls-button";
 	viewUrlsButton.className = "btn btn-primary";
 	viewUrlsButton.textContent = "View All URLS";

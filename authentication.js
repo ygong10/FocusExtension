@@ -15,7 +15,6 @@ function initApp() {
       var providerData = user.providerData;
       // [START_EXCLUDE]
       document.getElementById('quickstart-button').textContent = 'Sign out';
-      document.getElementById("config-button").style.display = "inline-block";
 
 			// api handles existing users
       if (!document.getElementById("url-controller-view")) {
@@ -29,7 +28,6 @@ function initApp() {
       if (urlControllerView) {
         urlControllerView.remove();
       }
-      document.getElementById("config-button").style.display = "none";
       // Let's try to get a Google auth token programmatically.
       // [START_EXCLUDE]
       document.getElementById('quickstart-button').textContent = 'Sign-in with Google';
