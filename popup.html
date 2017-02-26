@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Focus</title>
 
+		<link rel="stylsheet" type="text/css" href="css/stylesheet">
+
 		<!-- JQuery CDN -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -21,28 +23,19 @@
 	</head>
 
 	<body>
-  <h3>Firebase Authentication</h3>
-	<div id="main-container">
-		<div class="quickstart-user-details-container">
-			<button id="quickstart-button" class="btn btn-primary">Sign-in with Google</button>
-			<p>
-				Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-				<div>Firebase auth <code>currentUser</code> object value:</div>
-				<pre><code id="quickstart-account-details">null</code></pre>
-			</p>
-		</div>	
+	<div id="main-container" class="text-center">
+  	<h3>Focus Dashboard</h3>
+		<button id="quickstart-button" class="btn btn-primary">Sign-in with Google</button>
 
-		<div class="url-controller-view">
+			<a class="btn btn-primary" href="popupConfig.html">Config</a>
 
-		</div>
 	</div>
-
-		<a class="btn btn-primary" href="popupConfig.html">Config</button>
-
+	
 		<script src="firebaseConfig.js"></script>
 		<script src="init.js"></script>
 		<script src="api.js"></script>
 		<script src="logic.js"></script>
-		<script src="credentials.js"></script>
+		<script src="htmlBuilder.js"></script>
+		<script src="authentication.js"></script>
 	</body>
 </html>

@@ -2,7 +2,6 @@
 
 var database = firebase.database();
 
-
 var api = (function() {
 	var userApiEndpoint = 'users/';
 
@@ -10,7 +9,6 @@ var api = (function() {
 		var userRef = database.ref(userApiEndpoint + uid);
 		return userRef.once('value')
 			.then(function(snapshot) {
-				console.log(snapshot.val());
 				return snapshot.val();
 			});
 	}
@@ -30,7 +28,7 @@ var api = (function() {
 		});
 	}
 
-	var updateUserData = function(data) {
+	var updateUserData = function(uid, data) {
 		var userRef = database.ref(userApiEndpoint + uid);
 		userRef.update(data);
 	}
