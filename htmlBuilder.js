@@ -77,8 +77,8 @@ var buildUrlList = function(button, uid) {
 			urlsContainer.textContent = "No Urls Set";
 		} else {
 			for (var i  = 0; i < restricted_urls.length; i++) {
-				var row = document.createElement("div");
-				var urlContainer = document.createElement("div");
+				let row = document.createElement("div");
+				let urlContainer = document.createElement("div");
 				urlContainer.textContent = restricted_urls[i];
 
 				let removeButton = document.createElement("button");
