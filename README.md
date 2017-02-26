@@ -5,7 +5,11 @@ This is an open source Google Chrome Extension to promote productivity by removi
   * Setting timer for closing tabs
 
 ## USAGE
-  * [USAGE EXAMPLE]
+  * Open Google Chrome
+  * Go to chrome://extensions
+  * Check the box that says "developer mode"
+  * Look for the extension on the top right of your navigation bar
+  * Try it out! :)
   
 ## BUILD/INSTALLATION INSTRUCTIONS
   * Google Chrome
@@ -19,7 +23,7 @@ These two guides will help you understand how to use firebase with chrome extens
   * [chromextension quickstarter](https://github.com/firebase/quickstart-js/tree/master/auth/chromextension)
 
 ## Contributor Guide
-[LINK TO CONTRIBUTING.md]
+[CONTRIBUTING.md](https://github.com/ygong10/FocusExtension/blob/master/CONTRIBUTING.md)
 
 ## License 
 GNU General Public License version 3
