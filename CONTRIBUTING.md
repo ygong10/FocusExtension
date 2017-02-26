@@ -1,31 +1,34 @@
-#Contibuting to [PROJECT]
+#Contibuting to FocusExtension
 
-## Welcome contributors to the project: 
+Thank you for your interest in contributing to Focus
 
-## Short Links to Important Resources:
-* docs: handbook / roadmap (you'll learn more about this in the roadmapping session)
-* bugs: issue tracker / bug report tool
-* communcations: forum link, developer list, IRC/email, Slack, etc.
 ## Testing
-## Development environment details
+No testing have been set up yet.
 
 ## How to submit changes: Pull Request protocol etc. 
-_What people might expect in a response from the core devs_ 
+Feel free to make a pull request to master with good and clear messages.
 
-## How to report a bug: 
+## Bug Reports: 
+There are bugs littered everywhere in this project
 * Templates: 
-  * _What to include in a bug report_
+  * Summary of bug
+  * Steps to reproduce bug
+  * console output if applicable
 * First bugs for Contributors
-  * _What would be good bugs to start with?_
+  * Probably anything that has to do with the Javascript files :)
     
 ## New Feature Requirements
-_Any guidelines for proposing the feature_
+To request a feature, please create an issue on github.
 
 ## Style Guide / Coding conventions 
+There are no strict styling policy as long as it is readable.
+Try to stick to ES6 as much as possible, we're going to fully transition to ES6 soon.
 
 ## Code of Conduct
+Don't be a douche?
 
 ## Recognition model
-_How will contributors be recognized?_
+Your work will be potentially used by a lot of people!
 
 ## Where can I ask for help?
+You can directly email me at ygongdev@gmail.com for now. When there's more contributors, we'll have an official communication channel.
