@@ -1,5 +1,5 @@
-"use strict"
-/* From Firebase Google Chrome tutorial */
+"use strict";
+/* From Firebase Google Chrome Extension tutorial */
 function initApp() {
   // Listen for auth state changes.
   // [START authstatelistener]
@@ -85,4 +85,6 @@ function startSignIn() {
 window.onload = function() {
   initApp();
 };
+
+
 

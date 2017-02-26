@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 var database = firebase.database();
 
@@ -19,10 +19,10 @@ var api = (function() {
 		checkIfExist(userRef).then(function(exists) {
 			if (!exists) {
 					var data = {	
-												"email": email,
-												"restricted_urls": [],
-												"statistics": {}
-											};
+											"email": email,
+											"restricted_urls": [],
+											"statistics": {}
+										};
 				userRef.set(data);
 			}
 		});

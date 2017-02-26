@@ -9,10 +9,10 @@ var logic = (function() {
 			}
 
 			// Send message to background script
-			chrome.extension.sendMessage({data: data["restricted_urls"]},
-				function(response) {
-					// Do something?
-				});
+			chrome.extension.sendMessage({data: data["restricted_urls"]}, function(response) {
+				// Do something?
+			});
+			
 			api.updateUserData(uid, data);			
 		});
 	}
@@ -29,11 +29,11 @@ var logic = (function() {
 						data["restricted_urls"].splice(i, 1);
 						console.log("removed");
 						button.remove();
-						chrome.extension.sendMessage({data: data["restricted_urls"]},
-							function(response) {
-								// Do something?
-							});
-							api.updateUserData(uid, data);
+						chrome.extension.sendMessage({data: data["restricted_urls"]}, function(response) {
+							// Do something?
+						});
+
+						api.updateUserData(uid, data);
 						break;
 					}
 				}
@@ -46,3 +46,4 @@ var logic = (function() {
 		removeUrl: removeUrl
 	}
 })();
+

@@ -2,30 +2,49 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Focus</title>
+
+		<link rel="stylsheet" type="text/css" href="css/stylesheet">
+
+		<!-- JQuery CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 		<!-- Bootstrap CDN -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<!-- FireBase -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+
 	</head>
 
 	<body>
-		<select>
-			<option>Instant</option>
-			<option>5 Minutes</option>
-			<option>10 Minutes</option>
-			<option>15 Minutes</option>
-			<option>30 Minutes</option>
-			<option>45 Minutes</option>
-			<option>1 hour</option>
-			<option>2 hours</option>
-			<option>4 hours</option>
-			<option>8 hours</option>
-			<option>1 day </option>
+		
+		<select id="timer-select">
+			<option value="0">Instant</option>
+			<option value="300">5 Minutes</option>
+			<option value="600">10 Minutes</option>
+			<option value="900">15 Minutes</option>
+			<option value="1800">30 Minutes</option>
+			<option value="2700">45 Minutes</option>
+			<option value="3600">1 hour</option>
+			<option value="7200">2 hours</option>
+			<option value="14400">4 hours</option>
+			<option value="28800">8 hours</option>
+			<option value="86400">1 day</option>
 		</select>
-		<button type="submit" class="btn btn-primary">Set Time</button>
+		<button id="set-timer-button" class="btn btn-primary">Set Timer</button>
 		<a class="btn btn-primary" href="popup.html">Back to Home</button>
+
+		<script src="firebaseConfig.js"></script>
+		<script src="init.js"></script>
+		<script src="api.js"></script>
+		<script src="logic.js"></script>
+		<script src="htmlBuilder.js"></script>
+		<script src="popupConfig.js"></script>
 	</body>
 </html>

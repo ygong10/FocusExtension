@@ -1,15 +1,15 @@
 {
 	"manifest_version": 2,
 	"name": "Focus",
-	"description": "Focus is an open source extension that cleans up tabs that you don't need",
-	"version": "1.0.0.3",
+	"description": "Focus is an open source extension that cleans up tabs that distracts you",
+	"version": "1.0.0.4",
 
 	"browser_action": {
 		"default_popup": "popup.html"
 	},
 
 	"background": {
-		"scripts": ["firebaseConfig.js", "init.js", "api.js", "logic.js", "htmlBuilder.js","authentication.js", "tabHandler.js"],
+		"scripts": ["tabHandler.js"],
 		"persistent": false
 	},
 

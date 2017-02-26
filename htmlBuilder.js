@@ -1,4 +1,4 @@
-
+"use strict";
 var viewUrlsButtonClicked = false;
 
 var buildUrlControllerView = function(uid) {
@@ -43,7 +43,6 @@ var buildUrlControllerView = function(uid) {
 			removeButton.addEventListener("click", function() {
 				var urlName = urlContainer.textContent;
 				logic.removeUrl(row, uid, urlName).then(function() {
-					console.log(row + "removed");
 				});
 			});
 		}
@@ -89,9 +88,7 @@ var buildUrlList = function(button, uid) {
 
 				removeButton.addEventListener("click", function() {
 					var urlName = urlContainer.textContent;
-					console.log(row);					
 					logic.removeUrl(row, uid, urlName).then(function() {
-						console.log(row + "removed");
 					});
 				});
 				urlsContainer.appendChild(row);
