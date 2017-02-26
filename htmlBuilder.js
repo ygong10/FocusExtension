@@ -13,15 +13,12 @@ var buildUrlControllerView = function(uid) {
 
 	viewUrlsButton.id = "view-res-urls-button";
 	viewUrlsButton.className = "btn btn-primary";
-	viewUrlsButton.textContent = "View All Restricted URLS";
+	viewUrlsButton.textContent = "View All URLS";
 
 	urlControllerView.id = "url-controller-view";
 	urlControllerView.appendChild(inputUrlBox);
 	urlControllerView.appendChild(addUrlButton);
 	urlControllerView.appendChild(viewUrlsButton);
-
-	var mainContainer = document.getElementById("main-container");
-	mainContainer.appendChild(urlControllerView);
 
 	addUrlButton.addEventListener("click", function() {
 		var urlValue = inputUrlBox.value;
@@ -29,6 +26,9 @@ var buildUrlControllerView = function(uid) {
 		var urlsContainer = document.getElementById("restricted-urls-container");
 
 		if (urlsContainer) {
+			if (urlsContainer.textContent === "No Urls Set") {
+				urlsContainer.textContent = "";
+			}
 			var row = document.createElement("div");
 			var urlContainer = document.createElement("div");
 			urlContainer.textContent = urlValue;
@@ -42,8 +42,9 @@ var buildUrlControllerView = function(uid) {
 
 			removeButton.addEventListener("click", function() {
 				var urlName = urlContainer.textContent;
-				logic.removeUrl(row, uid, urlName);
-				removeButton.remove();
+				logic.removeUrl(row, uid, urlName).then(function() {
+					console.log(row + "removed");
+				});
 			});
 		}
 		inputUrlBox.value = "";
@@ -51,13 +52,18 @@ var buildUrlControllerView = function(uid) {
 
 	viewUrlsButton.addEventListener("click", function() {
 		if (!viewUrlsButtonClicked) {
-			buildUrlList(urlControllerView, uid);
+			buildUrlList(urlControllerView, uid);		
 			viewUrlsButtonClicked = true;
+			viewUrlsButton.textContent = "Stop Viewing";
 		} else {
-			document.getElementById("restricted-urls").remove();
+			viewUrlsButton.textContent = "View All URLS";
+			document.getElementById("restricted-urls-container").remove();
 			viewUrlsButtonClicked = false;
 		}
 	});
+
+	var mainContainer = document.getElementById("main-container");
+	mainContainer.appendChild(urlControllerView);	
 };
 
 
@@ -80,14 +86,16 @@ var buildUrlList = function(button, uid) {
 
 				row.appendChild(urlContainer);
 				row.appendChild(removeButton);
-				urlsContainer.appendChild(row);
 
 				removeButton.addEventListener("click", function() {
 					var urlName = urlContainer.textContent;
-					logic.removeUrl(row, uid, urlName);
-					console.log("removing");
-					removeButton.remove();
+					console.log(row);					
+					logic.removeUrl(row, uid, urlName).then(function() {
+						console.log(row + "removed");
+					});
 				});
+				urlsContainer.appendChild(row);
+				
 			}
 		}
 		button.appendChild(urlsContainer);

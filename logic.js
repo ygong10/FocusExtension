@@ -18,7 +18,7 @@ var logic = (function() {
 	}
 
 	var removeUrl = function(button, uid, url) {
-		api.getUserData(uid).then(function(data) {
+		return api.getUserData(uid).then(function(data) {
 			var restricted_urls = data["restricted_urls"];
 			if (restricted_urls === undefined) {
 				return;
@@ -27,18 +27,19 @@ var logic = (function() {
 					var restricted_url = restricted_urls[i];
 					if (restricted_url === url) {
 						data["restricted_urls"].splice(i, 1);
+						console.log("removed");
+						button.remove();
+						chrome.extension.sendMessage({data: data["restricted_urls"]},
+							function(response) {
+								// Do something?
+							});
+							api.updateUserData(uid, data);
 						break;
 					}
 				}
-
-			chrome.extension.sendMessage({data: data["restricted_urls"]},
-				function(response) {
-					// Do something?
-				});
-				api.updateUserData(uid, data);
 			}			
 		});
-	}
+	};
 
 	return {
 		addUrl: addUrl,
