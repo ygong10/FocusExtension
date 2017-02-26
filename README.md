@@ -14,13 +14,13 @@ This is an open source Google Chrome Extension to promote productivity by removi
 ## BUILD/INSTALLATION INSTRUCTIONS
   * Google Chrome
     * [Download The Latest Version of Google Chrome](https://www.google.com/chrome/)
+  * Firebase
+    * These two guides will help you understand how to setup and use firebase with chrome extension
+    * [firebase-chrome-extension](https://github.com/firebase/firebase-chrome-extension)
+    * [chromextension quickstarter](https://github.com/firebase/quickstart-js/tree/master/auth/chromextension)
 
 ## Getting Started
 You will only need Google Chrome and Firebase to work on this project. Make sure to replace the credentials in the project with your own credentials from firebase.
-
-These two guides will help you understand how to use firebase with chrome extension
-  * [firebase-chrome-extension](https://github.com/firebase/firebase-chrome-extension)
-  * [chromextension quickstarter](https://github.com/firebase/quickstart-js/tree/master/auth/chromextension)
 
 ## Contributor Guide
 [CONTRIBUTING.md](https://github.com/ygong10/FocusExtension/blob/master/CONTRIBUTING.md)
