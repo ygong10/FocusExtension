@@ -75,7 +75,7 @@ var buildUrlList = function(button, uid) {
 				var urlContainer = document.createElement("div");
 				urlContainer.textContent = restricted_urls[i];
 
-				var removeButton = document.createElement("button");
+				let removeButton = document.createElement("button");
 				removeButton.textContent = "Remove";
 
 				row.appendChild(urlContainer);
