@@ -97,6 +97,9 @@ var buildUrlList = function(button, uid) {
 				
 			}
 		}
+		chrome.extension.sendMessage({data: data["restricted_urls"]}, function(response) {
+			// Do something?
+		});
 		button.appendChild(urlsContainer);
 	});
 };

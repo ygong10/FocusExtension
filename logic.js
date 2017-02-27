@@ -27,7 +27,6 @@ var logic = (function() {
 					var restricted_url = restricted_urls[i];
 					if (restricted_url === url) {
 						data["restricted_urls"].splice(i, 1);
-						console.log("removed");
 						button.remove();
 						chrome.extension.sendMessage({data: data["restricted_urls"]}, function(response) {
 							// Do something?
